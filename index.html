@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luas Trapesium Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #hasil {
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function hitungLuasTrapesium() {
+            var garisAtas = parseFloat(document.getElementById('garis-atas').value);
+            var garisBawah = parseFloat(document.getElementById('garis-bawah').value);
+            var tinggi = parseFloat(document.getElementById('tinggi').value);
+
+            var luas = 0.5 * (garisAtas + garisBawah) * tinggi;
+
+            document.getElementById('hasil').innerHTML = 'Luas Trapesium: ' + luas.toFixed(2) + 'cm2';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Luas Trapesium Calculator</h1>
+
+        <div>
+            <label for="garis-atas">Garis Atas: </label>
+            <input type="number" id="garis-atas" placeholder="Masukkan panjang garis atas">
+        </div>
+
+        <div>
+            <label for="garis-bawah">Garis Bawah: </label>
+            <input type="number" id="garis-bawah" placeholder="Masukkan panjang garis bawah">
+        </div>
+
+        <div>
+            <label for="tinggi">Tinggi: </label>
+            <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+        </div>
+
+        <button onclick="hitungLuasTrapesium()">Hitung Luas</button>
+
+        <p id="hasil"></p>
+    </div>
+</body>
+</html>
